@@ -94,7 +94,9 @@ hr {
 }
 
 blockquote {
-    border-left: 5px solid #42b983;
+    /* 颜色修改3 */
+    /* border-left: 5px solid #42b983; */
+    border-left: 5px solid #b97b42;
     padding: 1rem 0.8rem 0.2rem 0.8rem;
     color: #666;
     background-color: rgba(66, 185, 131, .1);
@@ -241,11 +243,15 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    /* 颜色修改1&2 */
+    /* background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%); */
+    background-image: linear-gradient(to right, #df933c 0%, #d39013 100%);
 }
 
 .text-color {
-    color: #0f9d58 !important;
+    /* 颜色修改2 */
+    /* color: #0f9d58 !important; */
+    color: #d39013 !important;
 }
 
 .white-color {
@@ -257,7 +263,9 @@ mark {
     position: fixed;
     bottom: 0;
     z-index: 300;
-    background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    /* 颜色修改1&2 */
+    background: linear-gradient(to right, #df933c 0%, #d39013 100%);
+    /* background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%); */
     opacity: 0.8;
 }
 
@@ -875,7 +883,9 @@ article a {
 
 article a:hover {
     font-weight: bold;
-    color: #42b983;
+    /* 颜色修改3 */
+    /* color: #42b983; */
+    color: #b97b42;
     text-decoration: underline;
 }
 
@@ -1058,7 +1068,9 @@ article .article-tags .chip {
     border-radius: 15px;
     margin-right: 5px;
     margin-bottom: 2px;
-    color: #42b983;
+    /* 颜色修改3 */
+    /* color: #42b983; */
+    color: #b97b42;
     background: #fff;
     border: 1px solid;
     transition: all 0.6s ease-in-out;
@@ -1066,17 +1078,23 @@ article .article-tags .chip {
 
 #artDetail .tag_share .article-tag .chip:hover {
     color: #fff;
-    background: #42b983;
+    /* 颜色修改3 */
+    /* background: #42b983; */
+    background: #b97b42;
 }
 
 #artDetail .post-cate {
     float: right;
-    color: #42b983;
+    /* 颜色修改3 */
+    /* color: #42b983; */
+    color: #b97b42;
 }
 
 #artDetail .post-cate a {
     padding-right: 5px;
-    color: #42b983;
+    /* 颜色修改3 */
+    /* color: #42b983; */
+    color: #b97b42;
     font-weight: 500;
 }
 
@@ -1095,7 +1113,9 @@ article .article-tags .chip {
 
 #artDetail .post-info .post-category:hover {
     font-weight: bold;
-    color: #42b983;
+    /* 颜色修改3 */
+    /* color: #42b983; */
+    color: #b97b42;
     text-decoration: underline;
 }
 
@@ -1158,7 +1178,9 @@ article .article-tags .chip {
 
 #artDetail .reprint a {
     font-size: 1.05rem;
-    color: #42b983;
+    /* 颜色修改3 */
+    /* color: #42b983; */
+    color: #b97b42;
     font-weight: 500;
 }
 
@@ -1174,7 +1196,9 @@ article .article-tags .chip {
 
 #articleContent a {
     padding: 0 2px;
-    color: #42b983;
+    /* 颜色修改3 */
+    /* color: #42b983; */
+    color: #b97b42;
     font-weight: 500;
     text-decoration: underline;
     word-wrap: break-word;
@@ -1317,7 +1341,9 @@ thead {
 
 .chip-container .chip:hover {
     color: #fff;
-    background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%) !important;
+    /* 颜色修改1&2 */
+    /* background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%) !important; */
+    background: linear-gradient(to right, #df933c 0%, #d39013 100%) !important;
 }
 
 .chip .tag-length {
@@ -1393,7 +1419,9 @@ thead {
     left: 18px;
     height: 100%;
     width: 4px;
-    background: #0f9d58;
+    /* 颜色修改2 */
+    /* background: #0f9d58; */
+    background: #d39013;
 }
 
 @media only screen and (min-width: 900px) {
@@ -1608,7 +1636,10 @@ thead {
 }
 
 .post-statis .statis .count a {
-    color: #42b983;
+    /* 颜色修改3 */
+    /* color: #42b983; */
+    color: #b97b42;
+    
 }
 
 .post-statis .statis .name {
@@ -1629,8 +1660,12 @@ thead {
     margin: 0 0.5rem;
     padding: 0;
     color: #fff;
-    border: 1px solid #0f9d58;
-    background: radial-gradient(#4cbf30, #0f9d58);
+    /* 颜色修改2 */
+    /* border: 1px solid #0f9d58; */
+    border: 1px solid #d39013;
+    /* 颜色修改1&2 */
+    /* background: radial-gradient(#4cbf30, #0f9d58); */
+    background: radial-gradient(#df933c, #d39013);
     font-size: 0.9rem;
     border-radius: 50%;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .21), 0 2px 3px rgba(0, 0, 0, .1);
@@ -1806,8 +1841,11 @@ thead {
 
 .other-skills .chip:hover {
     color: #fff;
-    background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
-    border: 1px solid #4cbf30;
+    /* 颜色修改1&2 */
+    /* background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%); */
+    background: linear-gradient(to right, #df933c 0%, #d39013 100%);
+    /* border: 1px solid #4cbf30; */
+    border: 1px solid #df933c;
     box-shadow: 0 5px 5px rgba(0, 0, 0, .25)
 }
 
@@ -1878,7 +1916,10 @@ p.search-result-summary{
 
 .search-result-list .search-result-title {
     font-size: 1.4rem;
-    color: #42b983;
+    /* 颜色修改3 */
+    /* color: #42b983; */
+    color: #b97b42;
+    
 }
 
 .search-result-list li {
@@ -2259,16 +2300,22 @@ body.DarkMode .theme-btn:hover {
     color: #428bca;
 }
 .post-container .note.success {
-    border-left-color: #5cb85c;
+    /* 颜色修改4 */
+    /* border-left-color: #5cb85c; */
+    border-left-color: #b8935c;
 }
 .post-container .note.success h2, .post-container .note.success h3, .post-container .note.success h4, .post-container .note.success h5, .post-container .note.success h6 {
-    color: #5cb85c;
+    /* 颜色修改4 */
+    /* color: #5cb85c; */
+    color: #b8935c;
 }
 .post-container .note.success:not(.no-icon)::before {
     content:'\f058';
     font-family:'Font Awesome 5 Free';
     font-weight: 900;
-    color: #5cb85c;
+    /* 颜色修改4 */
+    /* color: #5cb85c; */
+    color: #b8935c;
 }
 .post-container .note.warning {
     border-left-color: #f0ad4e;
