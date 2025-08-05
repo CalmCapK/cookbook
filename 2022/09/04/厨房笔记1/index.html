@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="厨房笔记1, CalmCapK&#39;s Cookbook">
+    <meta name="keywords" content="厨房笔记1, Cookbook">
     <meta name="description" content="关于多种家常菜制作1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>厨房笔记1 | CalmCapK&#39;s Cookbook</title>
+    <title>厨房笔记1 | Cookbook</title>
     <link rel="icon" type="image/png" href="/cookbook/favicon.png">
     
 
@@ -64,7 +64,7 @@
                     
                     <img src="/cookbook/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">CalmCapK&#39;s Cookbook</span>
+                    <span class="logo-span">Cookbook</span>
                 </a>
             </div>
             
@@ -189,7 +189,7 @@
         
         <img src="/cookbook/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">CalmCapK&#39;s Cookbook</div>
+        <div class="logo-name">Cookbook</div>
         <div class="logo-desc">
             
             这是CalmCapK的料理厨房
@@ -3528,27 +3528,16 @@
 
 
     </div>
-    <div id="toc-aside" class="expanded col l3 m12 s12">
-        <div class="toc-widget card" style="background-color: white; display: none;">
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title">
-                <i class="far fa-list-alt"></i>&nbsp;&nbsp;目录
-                <span class="toc-close-btn"><i class="fas fa-times"></i></span>
-            </div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
     </div>
 </div>
 
-<!-- 移动端 TOC 悬浮按钮 -->
+<!-- TOC 悬浮按钮. -->
 
-<div id="floating-toc-btn-mobile" class="show-on-med-and-down fixed-action-btn">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
-</div>
-
-<!-- 桌面端 TOC 悬浮按钮 -->
 <div id="floating-toc-btn" class="hide-on-med-and-down">
     <a class="btn-floating btn-large bg-color">
         <i class="fas fa-list-ul"></i>
@@ -3605,26 +3594,6 @@
         const expandedClass = 'expanded';
         let $tocAside = $('#toc-aside');
         let $mainContent = $('#main-content');
-        let $tocWidget = $('.toc-widget');
-        
-        // 移动端目录切换
-        $('#floating-toc-btn-mobile .btn-floating').click(function () {
-            if ($tocWidget.is(':hidden')) {
-                $tocWidget.show();
-                $tocWidget.addClass('toc-mobile-show');
-            } else {
-                $tocWidget.hide();
-                $tocWidget.removeClass('toc-mobile-show');
-            }
-        });
-
-        // 移动端目录关闭按钮
-        $('.toc-close-btn').click(function () {
-            $tocWidget.hide();
-            $tocWidget.removeClass('toc-mobile-show');
-        });
-
-        // 桌面端目录切换
         $('#floating-toc-btn .btn-floating').click(function () {
             if ($tocAside.hasClass(expandedClass)) {
                 $tocAside.removeClass(expandedClass).hide();
