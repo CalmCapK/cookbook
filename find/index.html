@@ -443,8 +443,9 @@
         var datas = $("entry", xmlResponse).map(function () {
           // 提取content中的第一张图片
           var content = $("content", this).text();
-          var imgMatch = content.match(/<img[^>]+src=["']?([^"'>]+)["']?/i);
-          var img = imgMatch ? imgMatch[1] : null;
+          // var imgMatch = content.match(/<img[^>]+src=["']?([^"'>]+)["']?/i);
+          // var img = imgMatch ? imgMatch[1] : null;
+          var img = $("img", this).text();
           // 提取摘要
         //   var summary = content.replace(/<[^>]+>/g, "").substring(0, 120);
           var summary = $("summary", this).text();
@@ -458,7 +459,8 @@
             title: $("title", this).text(),
             content: content,
             url: $("url", this).text(),
-            date: $("updated", this).text(),
+            // date: $("updated", this).text(),
+            date: $("date", this).text(),
             img: img,
             summary: summary,
             tags: tags,
@@ -498,13 +500,25 @@
           matchPosts.forEach(function(post) {
             // 图片优先级：content中的img > 随机featureImages
             var imgUrl = post.img ? post.img : (jsDelivr + featureImages[Math.abs(hashCode(post.title) % featureImages.length)]);
-            var dateStr = post.date ? post.date.substr(0,10) : '';
+            var dateStr = '';
+            if (post.date) {
+              var date = new Date(post.date);
+              // 格式化日期为 YYYY-MM-DD 格式
+              dateStr = date.getFullYear() + '-' + 
+                        String(date.getMonth() + 1).padStart(2, '0') + '-' + 
+                        String(date.getDate()).padStart(2, '0');
+            }
             var tagHtml = '';
             if (post.tags && post.tags.length) {
               tagHtml = '<div class="card-action article-tags">';
               post.tags.forEach(function(tag) {
                 // tagHtml += '<a href="tag">';
+                // 去除标签两端的空格后再编码
+                var trimmedTag = tag.trim();
+                var tagPath = '/cookbook/tags/' + encodeURIComponent(trimmedTag);
+                tagHtml += '<a href="' + tagPath + '">';
                 tagHtml += '<span class="chip bg-color">' + tag + '</span>';
+                tagHtml += '</a>';
                 // tagHtml += '</a>';
               });
               tagHtml += '</div>';
@@ -513,7 +527,10 @@
             if (post.categories && post.categories.length) {
               categoryHtml = '<span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i>';
               post.categories.forEach(function(cat) {
-                categoryHtml += '<span class="post-category">' + cat + '</span>';
+                // 去除分类两端的空格后再编码
+                var trimmedCat = cat.trim();
+                var catPath = '/cookbook/categories/' + encodeURIComponent(trimmedCat);
+                categoryHtml += '<a href="' + catPath + '" class="post-category">' + trimmedCat + '</a>';
               });
               categoryHtml += '</span>';
             }
