@@ -91,3 +91,60 @@
     line-height: 48px;
     font-size: 1.4rem;
 }
+
+
+
+/* 检索页面样式 */
+#retrieve-search-input {
+    width: 80%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#retrieve-search-btn {
+    margin-top: 15px;
+}
+
+#retrieve-status {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.retrieve-article-item h4 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.retrieve-article-item h4 a {
+    color: #42b983;
+    transition: color 0.3s;
+}
+
+.retrieve-article-item h4 a:hover {
+    color: #3aa876;
+    text-decoration: underline;
+}
+
+.retrieve-article-content {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    line-height: 1.6;
+}
+
+.retrieve-article-content img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
+
+.btn-flat.bg-color-text {
+    color: #42b983;
+    font-weight: 500;
+}
+
+.btn-flat.bg-color-text:hover {
+    background-color: rgba(66, 185, 131, 0.1);
+}
