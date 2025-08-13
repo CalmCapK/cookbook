@@ -622,12 +622,12 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/cookbook/2024/12/10/%E5%BF%AB%E6%89%8B%E8%8F%9C/R00461-%E7%82%B8%E9%B8%A1%E8%9B%8B%E9%9D%A2%E5%8C%85%E7%89%87/">
+                <a href="/cookbook/2024/12/10/%E5%BF%AB%E6%89%8B%E8%8F%9C/R00465-%E9%B8%A1%E8%9B%8B%E9%A6%99%E8%82%A0%E9%9D%A2%E5%8C%85%E7%89%87/">
                     <div class="card-image">
                         
-                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R00461-炸鸡蛋面包片">
+                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R00465-鸡蛋香肠面包片">
                         
-                        <span class="card-title">R00461-炸鸡蛋面包片</span>
+                        <span class="card-title">R00465-鸡蛋香肠面包片</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -670,12 +670,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/cookbook/2024/12/10/%E5%BF%AB%E6%89%8B%E8%8F%9C/R00462-%E8%8A%9D%E5%A3%AB%E9%9D%A2%E5%8C%85%E7%89%87%E6%95%A3%E8%9B%8B%E7%89%88/">
+                <a href="/cookbook/2024/12/10/%E5%BF%AB%E6%89%8B%E8%8F%9C/R00466-%E8%8A%9D%E5%A3%AB%E7%84%97%E6%B3%A1%E9%9D%A2/">
                     <div class="card-image">
                         
-                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R00462-芝士面包片散蛋版">
+                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R00466-芝士焗泡面">
                         
-                        <span class="card-title">R00462-芝士面包片散蛋版</span>
+                        <span class="card-title">R00466-芝士焗泡面</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -770,6 +770,40 @@
             collapseDepth: Number('1'),
             headingSelector: 'h1, h2, h3, h4'
         });
+
+        // 目录折叠
+        // 为每个有子标题的目录项添加折叠/展开按钮
+        function addCollapseButtons() {
+            const $tocItems = $('#toc-content .toc-list-item');
+            $tocItems.each(function() {
+                const $this = $(this);
+                const $subList = $this.find('.toc-list').first();
+                
+                if ($subList.length > 0) {
+                    // 如果已有按钮，先移除
+                    $this.find('.toc-item-toggle').remove();
+                    
+                    // 添加折叠/展开按钮
+                    const $toggleBtn = $('<button class="toc-item-toggle"><i class="fas fa-chevron-right"></i></button>');
+                    $this.prepend($toggleBtn);
+                    
+                    // 绑定点击事件
+                    $toggleBtn.click(function(e) {
+                        e.stopPropagation();
+                        $subList.toggleClass('is-collapsed');
+                        const $icon = $(this).find('i');
+                        if ($subList.hasClass('is-collapsed')) {
+                            $icon.removeClass('fa-chevron-down').addClass('fa-chevron-right');
+                        } else {
+                            $icon.removeClass('fa-chevron-right').addClass('fa-chevron-down');
+                        }
+                    });
+                }
+            });
+        }
+
+        // 初始添加折叠/展开按钮
+        addCollapseButtons();
 
         // Set scroll toc fixed.
         let tocHeight = parseInt($(window).height() * 0.4 - 64);

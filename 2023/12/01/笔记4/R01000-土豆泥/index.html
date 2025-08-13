@@ -598,12 +598,12 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/cookbook/2023/12/01/%E7%AC%94%E8%AE%B04/R01000-%E5%8D%97%E7%93%9C%E5%9C%9F%E8%B1%86%E7%84%96%E9%B8%A1%E4%B8%81/">
+                <a href="/cookbook/2023/12/01/%E7%AC%94%E8%AE%B04/R01000-%E5%B0%8F%E7%99%BD%E8%8F%9C%E7%82%92%E8%82%89/">
                     <div class="card-image">
                         
-                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R01000-南瓜土豆焖鸡丁">
+                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R01000-小白菜炒肉">
                         
-                        <span class="card-title">R01000-南瓜土豆焖鸡丁</span>
+                        <span class="card-title">R01000-小白菜炒肉</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -646,12 +646,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/cookbook/2023/12/01/%E7%AC%94%E8%AE%B04/R01000-%E5%86%AC%E7%93%9C%E9%B8%A1%E8%9B%8B%E6%B1%A4/">
+                <a href="/cookbook/2023/12/01/%E7%AC%94%E8%AE%B04/R01000-%E5%9C%9F%E8%B1%86%E7%84%96%E9%B8%A1%E4%B8%81/">
                     <div class="card-image">
                         
-                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R01000-冬瓜鸡蛋汤">
+                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R01000-土豆焖鸡丁">
                         
-                        <span class="card-title">R01000-冬瓜鸡蛋汤</span>
+                        <span class="card-title">R01000-土豆焖鸡丁</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -746,6 +746,40 @@
             collapseDepth: Number('1'),
             headingSelector: 'h1, h2, h3, h4'
         });
+
+        // 目录折叠
+        // 为每个有子标题的目录项添加折叠/展开按钮
+        function addCollapseButtons() {
+            const $tocItems = $('#toc-content .toc-list-item');
+            $tocItems.each(function() {
+                const $this = $(this);
+                const $subList = $this.find('.toc-list').first();
+                
+                if ($subList.length > 0) {
+                    // 如果已有按钮，先移除
+                    $this.find('.toc-item-toggle').remove();
+                    
+                    // 添加折叠/展开按钮
+                    const $toggleBtn = $('<button class="toc-item-toggle"><i class="fas fa-chevron-right"></i></button>');
+                    $this.prepend($toggleBtn);
+                    
+                    // 绑定点击事件
+                    $toggleBtn.click(function(e) {
+                        e.stopPropagation();
+                        $subList.toggleClass('is-collapsed');
+                        const $icon = $(this).find('i');
+                        if ($subList.hasClass('is-collapsed')) {
+                            $icon.removeClass('fa-chevron-down').addClass('fa-chevron-right');
+                        } else {
+                            $icon.removeClass('fa-chevron-right').addClass('fa-chevron-down');
+                        }
+                    });
+                }
+            });
+        }
+
+        // 初始添加折叠/展开按钮
+        addCollapseButtons();
 
         // Set scroll toc fixed.
         let tocHeight = parseInt($(window).height() * 0.4 - 64);

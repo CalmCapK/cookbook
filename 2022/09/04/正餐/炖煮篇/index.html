@@ -916,54 +916,6 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/cookbook/2022/09/04/%E9%9D%9E%E6%AD%A3%E9%A4%90/%E9%9B%AA%E7%B3%95%E7%AF%87/">
-                    <div class="card-image">
-                        
-                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="雪糕篇">
-                        
-                        <span class="card-title">雪糕篇</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            关于多种雪糕菜谱
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-04
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/cookbook/categories/%E9%9D%9E%E6%AD%A3%E9%A4%90/" class="post-category">
-                                    非正餐
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/cookbook/tags/%E9%9B%AA%E7%B3%95/">
-                        <span class="chip bg-color">雪糕</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/cookbook/2022/09/04/%E6%AD%A3%E9%A4%90/%E7%85%8E%E7%82%92%E7%AF%87/">
                     <div class="card-image">
                         
@@ -976,6 +928,54 @@
                     <div class="summary block-with-text">
                         
                             关于多种煎炒菜谱
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-04
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/cookbook/categories/%E6%AD%A3%E9%A4%90/" class="post-category">
+                                    正餐
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/cookbook/tags/%E7%85%8E%E7%82%92/">
+                        <span class="chip bg-color">煎炒</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/cookbook/2022/09/04/%E6%AD%A3%E9%A4%90/%E7%82%96%E7%85%AE%E7%AF%87/">
+                    <div class="card-image">
+                        
+                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="炖煮篇">
+                        
+                        <span class="card-title">炖煮篇</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            关于多种炖煮菜谱
                         
                     </div>
                     <div class="publish-info">
@@ -994,11 +994,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/cookbook/tags/%E7%85%8E%E7%82%92/">
-                        <span class="chip bg-color">煎炒</span>
+                    <a href="/cookbook/tags/%E7%82%96%E7%85%AE/">
+                        <span class="chip bg-color">炖煮</span>
                     </a>
                     
                 </div>
@@ -1064,6 +1065,40 @@
             collapseDepth: Number('1'),
             headingSelector: 'h1, h2, h3, h4'
         });
+
+        // 目录折叠
+        // 为每个有子标题的目录项添加折叠/展开按钮
+        function addCollapseButtons() {
+            const $tocItems = $('#toc-content .toc-list-item');
+            $tocItems.each(function() {
+                const $this = $(this);
+                const $subList = $this.find('.toc-list').first();
+                
+                if ($subList.length > 0) {
+                    // 如果已有按钮，先移除
+                    $this.find('.toc-item-toggle').remove();
+                    
+                    // 添加折叠/展开按钮
+                    const $toggleBtn = $('<button class="toc-item-toggle"><i class="fas fa-chevron-right"></i></button>');
+                    $this.prepend($toggleBtn);
+                    
+                    // 绑定点击事件
+                    $toggleBtn.click(function(e) {
+                        e.stopPropagation();
+                        $subList.toggleClass('is-collapsed');
+                        const $icon = $(this).find('i');
+                        if ($subList.hasClass('is-collapsed')) {
+                            $icon.removeClass('fa-chevron-down').addClass('fa-chevron-right');
+                        } else {
+                            $icon.removeClass('fa-chevron-right').addClass('fa-chevron-down');
+                        }
+                    });
+                }
+            });
+        }
+
+        // 初始添加折叠/展开按钮
+        addCollapseButtons();
 
         // Set scroll toc fixed.
         let tocHeight = parseInt($(window).height() * 0.4 - 64);

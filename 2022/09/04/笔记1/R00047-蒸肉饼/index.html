@@ -614,18 +614,18 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/cookbook/2022/09/04/%E7%AC%94%E8%AE%B01/R00046-%E8%82%89%E6%9C%AB%E8%92%B8%E8%9B%8B/">
+                <a href="/cookbook/2022/09/04/%E6%AD%A3%E9%A4%90/%E8%92%B8%E5%88%B6%E7%AF%87/">
                     <div class="card-image">
                         
-                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R00046-肉末蒸蛋">
+                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="蒸制篇">
                         
-                        <span class="card-title">R00046-肉末蒸蛋</span>
+                        <span class="card-title">蒸制篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            待定
+                            关于多种蒸制菜谱
                         
                     </div>
                     <div class="publish-info">
@@ -636,8 +636,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/cookbook/categories/%E7%AC%94%E8%AE%B01/" class="post-category">
-                                    笔记1
+                            <a href="/cookbook/categories/%E6%AD%A3%E9%A4%90/" class="post-category">
+                                    正餐
                                 </a>
                             
                             
@@ -647,8 +647,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/cookbook/tags/%E7%AC%94%E8%AE%B01/">
-                        <span class="chip bg-color">笔记1</span>
+                    <a href="/cookbook/tags/%E5%BF%AB%E6%89%8B%E8%8F%9C/">
+                        <span class="chip bg-color">快手菜</span>
+                    </a>
+                    
+                    <a href="/cookbook/tags/%E8%92%B8%E5%88%B6/">
+                        <span class="chip bg-color">蒸制</span>
                     </a>
                     
                 </div>
@@ -662,12 +666,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/cookbook/2022/09/04/%E7%AC%94%E8%AE%B01/R00049-%E7%85%8E%E7%98%A6%E8%82%89%E5%92%8C%E9%A6%99%E8%82%A0/">
+                <a href="/cookbook/2022/09/04/%E7%AC%94%E8%AE%B01/R00045-%E7%98%A6%E8%82%89%E8%92%B8%E8%9B%8B/">
                     <div class="card-image">
                         
-                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R00049-煎瘦肉和香肠">
+                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R00045-瘦肉蒸蛋">
                         
-                        <span class="card-title">R00049-煎瘦肉和香肠</span>
+                        <span class="card-title">R00045-瘦肉蒸蛋</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -762,6 +766,40 @@
             collapseDepth: Number('1'),
             headingSelector: 'h1, h2, h3, h4'
         });
+
+        // 目录折叠
+        // 为每个有子标题的目录项添加折叠/展开按钮
+        function addCollapseButtons() {
+            const $tocItems = $('#toc-content .toc-list-item');
+            $tocItems.each(function() {
+                const $this = $(this);
+                const $subList = $this.find('.toc-list').first();
+                
+                if ($subList.length > 0) {
+                    // 如果已有按钮，先移除
+                    $this.find('.toc-item-toggle').remove();
+                    
+                    // 添加折叠/展开按钮
+                    const $toggleBtn = $('<button class="toc-item-toggle"><i class="fas fa-chevron-right"></i></button>');
+                    $this.prepend($toggleBtn);
+                    
+                    // 绑定点击事件
+                    $toggleBtn.click(function(e) {
+                        e.stopPropagation();
+                        $subList.toggleClass('is-collapsed');
+                        const $icon = $(this).find('i');
+                        if ($subList.hasClass('is-collapsed')) {
+                            $icon.removeClass('fa-chevron-down').addClass('fa-chevron-right');
+                        } else {
+                            $icon.removeClass('fa-chevron-right').addClass('fa-chevron-down');
+                        }
+                    });
+                }
+            });
+        }
+
+        // 初始添加折叠/展开按钮
+        addCollapseButtons();
 
         // Set scroll toc fixed.
         let tocHeight = parseInt($(window).height() * 0.4 - 64);
