@@ -778,6 +778,24 @@
             } else {
                 $tocWidget.removeClass('toc-fixed');
             }
+            // 折叠图标更新方式一
+            addCollapseButtons();
+            // 折叠图标更新方方式二
+            /* Sync toc item icons with collapsed state */
+            // $('#toc-content .toc-list-item').each(function() {
+            //     const $this = $(this);
+            //     const $subList = $this.find('.toc-list').first();
+            //     const $toggleBtn = $this.find('.toc-item-toggle');
+
+            //     if ($subList.length > 0 && $toggleBtn.length > 0) {
+            //         const $icon = $toggleBtn.find('i');
+            //         if ($subList.hasClass('is-collapsed')) {
+            //             $icon.removeClass('fa-chevron-down').addClass('fa-chevron-right');
+            //         } else {
+            //             $icon.removeClass('fa-chevron-right').addClass('fa-chevron-down');
+            //         }
+            //     }
+            // });        
         });
 
         

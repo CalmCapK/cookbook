@@ -603,12 +603,12 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/cookbook/2023/09/18/%E7%AC%94%E8%AE%B02/R00260-%E7%99%BD%E7%81%BC%E7%A7%8B%E8%91%B5/">
+                <a href="/cookbook/2023/09/18/%E7%AC%94%E8%AE%B02/R00261-%E8%9A%9D%E6%B2%B9%E7%A7%8B%E8%91%B5/">
                     <div class="card-image">
                         
-                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R00260-白灼秋葵">
+                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R00261-蚝油秋葵">
                         
-                        <span class="card-title">R00260-白灼秋葵</span>
+                        <span class="card-title">R00261-蚝油秋葵</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -651,30 +651,30 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/cookbook/2022/09/04/%E6%AD%A3%E9%A4%90/%E8%92%B8%E5%88%B6%E7%AF%87/">
+                <a href="/cookbook/2023/09/18/%E7%AC%94%E8%AE%B02/R00263-%E8%99%BE%E4%BB%81%E7%82%92%E7%89%9B%E5%A5%B6/">
                     <div class="card-image">
                         
-                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="蒸制篇">
+                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R00263-虾仁炒牛奶">
                         
-                        <span class="card-title">蒸制篇</span>
+                        <span class="card-title">R00263-虾仁炒牛奶</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            关于多种蒸制菜谱
+                            待定
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-18
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/cookbook/categories/%E6%AD%A3%E9%A4%90/" class="post-category">
-                                    正餐
+                            <a href="/cookbook/categories/%E7%AC%94%E8%AE%B02/" class="post-category">
+                                    笔记2
                                 </a>
                             
                             
@@ -684,12 +684,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/cookbook/tags/%E5%BF%AB%E6%89%8B%E8%8F%9C/">
-                        <span class="chip bg-color">快手菜</span>
-                    </a>
-                    
-                    <a href="/cookbook/tags/%E8%92%B8%E5%88%B6/">
-                        <span class="chip bg-color">蒸制</span>
+                    <a href="/cookbook/tags/%E7%AC%94%E8%AE%B02/">
+                        <span class="chip bg-color">笔记2</span>
                     </a>
                     
                 </div>
@@ -801,6 +797,24 @@
             } else {
                 $tocWidget.removeClass('toc-fixed');
             }
+            // 折叠图标更新方式一
+            addCollapseButtons();
+            // 折叠图标更新方方式二
+            /* Sync toc item icons with collapsed state */
+            // $('#toc-content .toc-list-item').each(function() {
+            //     const $this = $(this);
+            //     const $subList = $this.find('.toc-list').first();
+            //     const $toggleBtn = $this.find('.toc-item-toggle');
+
+            //     if ($subList.length > 0 && $toggleBtn.length > 0) {
+            //         const $icon = $toggleBtn.find('i');
+            //         if ($subList.hasClass('is-collapsed')) {
+            //             $icon.removeClass('fa-chevron-down').addClass('fa-chevron-right');
+            //         } else {
+            //             $icon.removeClass('fa-chevron-right').addClass('fa-chevron-down');
+            //         }
+            //     }
+            // });        
         });
 
         

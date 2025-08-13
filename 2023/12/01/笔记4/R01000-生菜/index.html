@@ -583,12 +583,12 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/cookbook/2023/12/01/%E7%AC%94%E8%AE%B04/R01000-%E7%89%9B%E5%A5%B6%E5%8D%97%E7%93%9C%E6%B1%A4/">
+                <a href="/cookbook/2023/12/01/%E7%AC%94%E8%AE%B04/R01000-%E7%95%AA%E8%8C%84%E9%A6%99%E8%82%A0%E7%83%A7%E8%B1%86%E8%85%90/">
                     <div class="card-image">
                         
-                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R01000-牛奶南瓜汤">
+                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R01000-番茄香肠烧豆腐">
                         
-                        <span class="card-title">R01000-牛奶南瓜汤</span>
+                        <span class="card-title">R01000-番茄香肠烧豆腐</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -631,12 +631,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/cookbook/2023/12/01/%E7%AC%94%E8%AE%B04/R01000-%E7%95%AA%E8%8C%84%E7%82%92%E8%9B%8B/">
+                <a href="/cookbook/2023/12/01/%E7%AC%94%E8%AE%B04/R01000-%E7%B4%AB%E8%8F%9C%E7%82%92%E9%A5%AD/">
                     <div class="card-image">
                         
-                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R01000-番茄炒蛋">
+                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R01000-紫菜炒饭">
                         
-                        <span class="card-title">R01000-番茄炒蛋</span>
+                        <span class="card-title">R01000-紫菜炒饭</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -777,6 +777,24 @@
             } else {
                 $tocWidget.removeClass('toc-fixed');
             }
+            // 折叠图标更新方式一
+            addCollapseButtons();
+            // 折叠图标更新方方式二
+            /* Sync toc item icons with collapsed state */
+            // $('#toc-content .toc-list-item').each(function() {
+            //     const $this = $(this);
+            //     const $subList = $this.find('.toc-list').first();
+            //     const $toggleBtn = $this.find('.toc-item-toggle');
+
+            //     if ($subList.length > 0 && $toggleBtn.length > 0) {
+            //         const $icon = $toggleBtn.find('i');
+            //         if ($subList.hasClass('is-collapsed')) {
+            //             $icon.removeClass('fa-chevron-down').addClass('fa-chevron-right');
+            //         } else {
+            //             $icon.removeClass('fa-chevron-right').addClass('fa-chevron-down');
+            //         }
+            //     }
+            // });        
         });
 
         

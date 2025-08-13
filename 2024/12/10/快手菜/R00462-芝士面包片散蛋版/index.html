@@ -603,12 +603,12 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/cookbook/2024/12/10/%E5%BF%AB%E6%89%8B%E8%8F%9C/R00461-%E7%82%B8%E9%B8%A1%E8%9B%8B%E9%9D%A2%E5%8C%85%E7%89%87/">
+                <a href="/cookbook/2024/12/10/%E5%BF%AB%E6%89%8B%E8%8F%9C/R00465-%E9%B8%A1%E8%9B%8B%E9%A6%99%E8%82%A0%E9%9D%A2%E5%8C%85%E7%89%87/">
                     <div class="card-image">
                         
-                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R00461-炸鸡蛋面包片">
+                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R00465-鸡蛋香肠面包片">
                         
-                        <span class="card-title">R00461-炸鸡蛋面包片</span>
+                        <span class="card-title">R00465-鸡蛋香肠面包片</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -651,12 +651,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/cookbook/2024/12/10/%E5%BF%AB%E6%89%8B%E8%8F%9C/R00465-%E9%B8%A1%E8%9B%8B%E9%A6%99%E8%82%A0%E9%9D%A2%E5%8C%85%E7%89%87/">
+                <a href="/cookbook/2024/12/10/%E5%BF%AB%E6%89%8B%E8%8F%9C/R00463-%E8%8A%9D%E5%A3%AB%E9%9D%A2%E5%8C%85%E7%89%87%E6%95%B4%E8%9B%8B%E7%89%88/">
                     <div class="card-image">
                         
-                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R00465-鸡蛋香肠面包片">
+                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R00463-芝士面包片整蛋版">
                         
-                        <span class="card-title">R00465-鸡蛋香肠面包片</span>
+                        <span class="card-title">R00463-芝士面包片整蛋版</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -797,6 +797,24 @@
             } else {
                 $tocWidget.removeClass('toc-fixed');
             }
+            // 折叠图标更新方式一
+            addCollapseButtons();
+            // 折叠图标更新方方式二
+            /* Sync toc item icons with collapsed state */
+            // $('#toc-content .toc-list-item').each(function() {
+            //     const $this = $(this);
+            //     const $subList = $this.find('.toc-list').first();
+            //     const $toggleBtn = $this.find('.toc-item-toggle');
+
+            //     if ($subList.length > 0 && $toggleBtn.length > 0) {
+            //         const $icon = $toggleBtn.find('i');
+            //         if ($subList.hasClass('is-collapsed')) {
+            //             $icon.removeClass('fa-chevron-down').addClass('fa-chevron-right');
+            //         } else {
+            //             $icon.removeClass('fa-chevron-right').addClass('fa-chevron-down');
+            //         }
+            //     }
+            // });        
         });
 
         

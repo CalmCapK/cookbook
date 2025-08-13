@@ -634,12 +634,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/cookbook/2023/12/01/%E7%AC%94%E8%AE%B04/R01000-%E7%85%AE%E9%9D%A2/">
+                <a href="/cookbook/2023/12/01/%E7%AC%94%E8%AE%B04/R01000-%E6%89%8B%E6%8A%93%E9%A5%BC%E6%98%A5%E5%8D%B7/">
                     <div class="card-image">
                         
-                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R01000-煮面">
+                        <img src="/cookbook/images/avatar.jpg" class="responsive-img" alt="R01000-手抓饼春卷">
                         
-                        <span class="card-title">R01000-煮面</span>
+                        <span class="card-title">R01000-手抓饼春卷</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -780,6 +780,24 @@
             } else {
                 $tocWidget.removeClass('toc-fixed');
             }
+            // 折叠图标更新方式一
+            addCollapseButtons();
+            // 折叠图标更新方方式二
+            /* Sync toc item icons with collapsed state */
+            // $('#toc-content .toc-list-item').each(function() {
+            //     const $this = $(this);
+            //     const $subList = $this.find('.toc-list').first();
+            //     const $toggleBtn = $this.find('.toc-item-toggle');
+
+            //     if ($subList.length > 0 && $toggleBtn.length > 0) {
+            //         const $icon = $toggleBtn.find('i');
+            //         if ($subList.hasClass('is-collapsed')) {
+            //             $icon.removeClass('fa-chevron-down').addClass('fa-chevron-right');
+            //         } else {
+            //             $icon.removeClass('fa-chevron-right').addClass('fa-chevron-down');
+            //         }
+            //     }
+            // });        
         });
 
         
