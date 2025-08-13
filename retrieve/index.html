@@ -397,40 +397,41 @@
 </div>
 
 <main class="content">
-<div class="container-fluid">
-    <div class="row">
-        <div id="main-content" class="col s12 m12 l9">
-  <div class="container">
-    <div class="card">
-      <div class="card-content">
-        <div class="input-field">
-          <input id="retrieve-search-input" type="text" placeholder="请输入要检索的内容">
-          <button id="retrieve-search-btn" class="btn waves-effect waves-light bg-color">检索</button>
-        </div>
-        <div id="retrieve-status"></div>
-      </div>
-    </div>
-  </div>
-
-  <div id="retrieve-result" class="container">
-    <!-- 检索结果将在这里显示 -->
-  </div>
-  </div>
-        <!-- 右侧目录 -->
-        <div id="toc-aside" class="expanded col l3">
-            <div class="toc-widget card" style="background-color: white;">
-                <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;检索结果目录</div>
-                <div id="toc-content"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="main-content" class="col s12 m12 l9">
+                <div class="container">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="input-field">
+                                <input id="retrieve-search-input" type="text" placeholder="请输入要检索的内容">
+                                <button id="retrieve-search-btn" class="btn waves-effect waves-light bg-color">检索</button>
+                            </div>
+                            <div id="retrieve-status"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="retrieve-result" class="container">
+                <!-- 检索结果将在这里显示 -->
+                </div>
+            </div>
+            <!-- 右侧目录 -->
+            <div id="toc-aside" class="expanded col l3">
+                <div class="toc-widget card" style="background-color: white;">
+                    <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;检索结果目录</div>
+                    <div id="toc-content"></div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </main>
 
 <script src="/cookbook/js/search.js"></script>
+<!-- 目录相关 -->
 <script src="/cookbook/libs/tocbot/tocbot.min.js"></script>
 
 <script>
+    // 目录相关
     $(function () {
         // 初始化目录
         tocbot.init({
@@ -453,31 +454,31 @@
             }
         });
 
-        // 
-        // // 修复宽度函数
-        // let fixPostCardWidth = function (srcId, targetId) {
-        //     let srcDiv = $('#' + srcId);
-        //     if (srcDiv.length === 0) {
-        //         return;
-        //     }
+        
+        // 修复宽度函数
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
 
-        //     let w = srcDiv.width();
-        //     if (w >= 450) {
-        //         w = w + 21;
-        //     } else if (w >= 350 && w < 450) {
-        //         w = w + 18;
-        //     } else if (w >= 300 && w < 350) {
-        //         w = w + 16;
-        //     } else {
-        //         w = w + 14;
-        //     }
-        //     $('#' + targetId).width(w);
-        // };
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
 
-        // // 切换目录展开/收起
-        // const expandedClass = 'expanded';
-        // let $tocAside = $('#toc-aside');
-        // let $mainContent = $('#main-content');
+        // 切换目录展开/收起
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
         // let $body = $('body');
         
         // // 创建遮罩层
@@ -511,24 +512,24 @@
         // // 添加窗口大小调整事件监听器
         // $(window).resize(handleWindowResize);
         
-        // $('#floating-toc-btn .btn-floating').click(function () {
-        //     if ($tocAside.hasClass(expandedClass)) {
-        //         $tocAside.removeClass(expandedClass);
-        //         $mainContent.removeClass('l9');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
         //         $overlay.hide();
         //         $body.removeClass('overflow-hidden');
-        //     } else {
-        //         $tocAside.addClass(expandedClass);
-        //         $mainContent.addClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
                 
         //         // 在移动设备上显示遮罩
         //         if ($(window).width() <= 992) {
         //             $overlay.show();
         //             $body.addClass('overflow-hidden');
         //         }
-        //     }
-        // });
-        // 
+            }
+        });
+        
 
         // 检索结果生成后更新目录
         let originalPerformSearch = window.performSearch;
@@ -542,6 +543,7 @@
             };
         }
     });
+// 检索的内容
 (function() {
   // 检索功能
   function retrieveFunc(path, search_id, result_id, status_id) {
@@ -623,6 +625,7 @@
             tempPageContent += '<div class="retrieve-article-item" style="margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee;">';
             // 为标题添加唯一ID
             var titleId = 'article-title-' + index;
+            tempPageContent += '<div class="right-align"><a href="' + article.url + '" target="_blank" class="btn-flat bg-color-text">查看原文 <i class="fas fa-arrow-right"></i></a></div>';
             tempPageContent += '<h4 id="' + titleId + '"><a href="' + article.url + '" class="anchor-link">' + (index + 1) + '. ' + article.title + '</a></h4>';
             tempPageContent += '<p class="grey-text"><i class="far fa-clock"></i> ' + article.date + '</p>';
 
@@ -643,7 +646,7 @@
             }
 
             tempPageContent += '<div class="retrieve-article-content">' + article.content + '</div>';
-            tempPageContent += '<div class="right-align"><a href="' + article.url + '" target="_blank" class="btn-flat bg-color-text">查看原文 <i class="fas fa-arrow-right"></i></a></div>';
+            // tempPageContent += '<div class="right-align"><a href="' + article.url + '" target="_blank" class="btn-flat bg-color-text">查看原文 <i class="fas fa-arrow-right"></i></a></div>';
             tempPageContent += '</div>';
           });
 

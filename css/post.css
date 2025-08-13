@@ -92,7 +92,35 @@
     font-size: 1.4rem;
 }
 
+/* 检索页面目录样式 */
+/* 不需要 */
+/* @media only screen and (max-width: 992px) {
+    #toc-aside {
+        position: fixed;
+        right: 0;
+        top: 64px;
+        bottom: 0;
+        width: 80%;
+        max-width: 300px;
+        z-index: 997;
+        transform: translateX(100%);
+        transition: transform 0.3s;
+    }
 
+    #toc-aside.expanded {
+        transform: translateX(0);
+    }
+
+    #main-content {
+        width: 100% !important;
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    #toc-aside {
+        display: block !important;
+    }
+} */
 
 /* 检索页面样式 */
 #retrieve-search-input {
@@ -148,3 +176,19 @@
 .btn-flat.bg-color-text:hover {
     background-color: rgba(66, 185, 131, 0.1);
 }
+
+/* 目录遮罩层样式 */
+/* 不需要 */
+/* .toc-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 996;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+} */
